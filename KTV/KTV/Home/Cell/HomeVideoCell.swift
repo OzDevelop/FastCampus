@@ -21,6 +21,7 @@ class HomeVideoCell: UITableViewCell {
     @IBOutlet weak var channelTitleLabel: UILabel!
     @IBOutlet weak var hotImageView: UIImageView!
 
+    // tableViewCell의 initializer
     override func awakeFromNib() {
         super.awakeFromNib()
         

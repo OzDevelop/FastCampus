@@ -19,6 +19,8 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginDidTap(_ sender: Any) {
+        // tabBar를 rootVC로 변경
+        // 로그인 이후 로그인 화면으로 다시 돌아올 일이 없기 때문
         self.view.window?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
     }
     

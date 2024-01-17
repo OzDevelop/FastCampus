@@ -24,6 +24,7 @@ class HomeRecommendItemCell: UITableViewCell {
 
         self.thumbnailContainerView.layer.cornerRadius = 5
         self.rankLabel.layer.cornerRadius = 5
+        // 원하는 라운딩 처리가 정상적으로 동작하도록 추가
         self.rankLabel.clipsToBounds = true
         self.playTimeBGView.layer.cornerRadius = 3
     }
