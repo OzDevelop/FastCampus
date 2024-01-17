@@ -42,6 +42,11 @@ class HomeViewController: UIViewController {
             forCellReuseIdentifier: HomeRankingContainerCell.identifier
         )
         
+        //MARK: - RecentWatch 추가
+        self.tableView.register(
+            UINib(nibName: HomeRecentWatchContainerCell.identifier, bundle: .main),
+            forCellReuseIdentifier: HomeRecentWatchContainerCell.identifier
+        )
         
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "empty")
         self.tableView.delegate = self
@@ -65,6 +70,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return 2
         case .ranking:
             return 1
+        case .recentWatch:
+            return 1
         case .recommend:
             return 1
         case .footer:
@@ -83,6 +90,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return HomeVideoCell.height
         case .ranking:
             return HomeRankingContainerCell.height
+        case .recentWatch:
+            return HomeRecentWatchContainerCell.height
         case .recommend:
             return HomeRecommendContainerCell.height
         case .footer:
@@ -115,6 +124,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             
             return cell
             
+        case .recentWatch:
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: HomeRecentWatchContainerCell.identifier,
+                for: indexPath
+            )
+            
+            (cell as? HomeRecentWatchContainerCell)?.delegate = self
+            
+            return cell
+            
         case .recommend:
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: HomeRecommendContainerCell.identifier,
@@ -142,5 +161,12 @@ extension HomeViewController: HomeRankingContainerCellDelegate {
 extension HomeViewController: HomeRecommendContainerCellDelegate {
     func homeRecommendContainerCell(_ cell: HomeRecommendContainerCell, didSelectItemAt index: Int) {
         print("home recommend cell did select item at \(index)")
+    }
+}
+
+extension HomeViewController: HomeRecentWatchContainerCellDelegate {
+    
+    func homeRecentWatchContainerCell(_ cell: HomeRecentWatchContainerCell, didSelectItemAt index: Int) {
+        print("home recent watch did select at \(index)")
     }
 }
