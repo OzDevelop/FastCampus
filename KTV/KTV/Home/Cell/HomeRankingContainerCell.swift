@@ -23,7 +23,10 @@ class HomeRankingContainerCell: UITableViewCell {
         super.awakeFromNib()
         
         // itemCell 등록
-        self.collectionView.register(UINib(nibName: HomeRankingItemCell.identifier, bundle: nil), forCellWithReuseIdentifier: HomeRankingItemCell.identifier)
+        self.collectionView.register(
+            UINib(nibName: HomeRankingItemCell.identifier, bundle: nil),
+            forCellWithReuseIdentifier: HomeRankingItemCell.identifier
+        )
         
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
