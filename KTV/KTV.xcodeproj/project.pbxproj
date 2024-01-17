@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11EF1B022B57F82C006C9951 /* HomeRankingContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF1B002B57F82C006C9951 /* HomeRankingContainerCell.swift */; };
+		11EF1B032B57F82C006C9951 /* HomeRankingContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11EF1B012B57F82C006C9951 /* HomeRankingContainerCell.xib */; };
+		11EF1B062B57FD68006C9951 /* HomeRankingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF1B042B57FD68006C9951 /* HomeRankingItemCell.swift */; };
+		11EF1B072B57FD68006C9951 /* HomeRankingItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11EF1B052B57FD68006C9951 /* HomeRankingItemCell.xib */; };
 		684920CE2AB1FD8C00E5202E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684920CD2AB1FD8C00E5202E /* TabBarController.swift */; };
 		6885F4652AAA3A4100226D1E /* HomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6885F4632AAA3A4100226D1E /* HomeHeaderCell.swift */; };
 		6885F4662AAA3A4100226D1E /* HomeHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6885F4642AAA3A4100226D1E /* HomeHeaderCell.xib */; };
@@ -51,6 +55,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11EF1B002B57F82C006C9951 /* HomeRankingContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankingContainerCell.swift; sourceTree = "<group>"; };
+		11EF1B012B57F82C006C9951 /* HomeRankingContainerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRankingContainerCell.xib; sourceTree = "<group>"; };
+		11EF1B042B57FD68006C9951 /* HomeRankingItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankingItemCell.swift; sourceTree = "<group>"; };
+		11EF1B052B57FD68006C9951 /* HomeRankingItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRankingItemCell.xib; sourceTree = "<group>"; };
 		684920CD2AB1FD8C00E5202E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = KTV/TabBarController.swift; sourceTree = SOURCE_ROOT; };
 		6885F4632AAA3A4100226D1E /* HomeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderCell.swift; sourceTree = "<group>"; };
 		6885F4642AAA3A4100226D1E /* HomeHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderCell.xib; sourceTree = "<group>"; };
@@ -138,6 +146,10 @@
 				6887B3912AAA61C1009389F6 /* HomeRecommendItemCell.xib */,
 				6887B3942AAA64B0009389F6 /* HomeFooterCell.swift */,
 				6887B3952AAA64B0009389F6 /* HomeFooterCell.xib */,
+				11EF1B002B57F82C006C9951 /* HomeRankingContainerCell.swift */,
+				11EF1B012B57F82C006C9951 /* HomeRankingContainerCell.xib */,
+				11EF1B042B57FD68006C9951 /* HomeRankingItemCell.swift */,
+				11EF1B052B57FD68006C9951 /* HomeRankingItemCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -304,11 +316,13 @@
 				688A0BBE2AAA601E0050ED98 /* HomeRecommendContainerCell.xib in Resources */,
 				6885F4662AAA3A4100226D1E /* HomeHeaderCell.xib in Resources */,
 				6887B3972AAA64B0009389F6 /* HomeFooterCell.xib in Resources */,
+				11EF1B072B57FD68006C9951 /* HomeRankingItemCell.xib in Resources */,
 				68CA313C2AAA292900A744AF /* Color.xcassets in Resources */,
 				6887B3932AAA61C1009389F6 /* HomeRecommendItemCell.xib in Resources */,
 				95E70C9F2AA8B93D007BAD7B /* Assets.xcassets in Resources */,
 				68CA31462AAA35F700A744AF /* HomeVideoCell.xib in Resources */,
 				95E70C9D2AA8B93B007BAD7B /* Main.storyboard in Resources */,
+				11EF1B032B57F82C006C9951 /* HomeRankingContainerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +347,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11EF1B062B57FD68006C9951 /* HomeRankingItemCell.swift in Sources */,
+				11EF1B022B57F82C006C9951 /* HomeRankingContainerCell.swift in Sources */,
 				95E70C9A2AA8B93B007BAD7B /* LoginViewController.swift in Sources */,
 				684920CE2AB1FD8C00E5202E /* TabBarController.swift in Sources */,
 				6887B3962AAA64B0009389F6 /* HomeFooterCell.swift in Sources */,
