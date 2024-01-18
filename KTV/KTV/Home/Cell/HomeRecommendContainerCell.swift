@@ -22,11 +22,14 @@ class HomeRecommendContainerCell: UITableViewCell {
         return HomeRecommendItemCell.height * 5 + top + bottom + footerInset
     }
     
+    private var recommends: [Home.Recommend]?
+    
+    weak var delegate: HomeRecommendContainerCellDelegate?
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var foldButton: UIButton!
-    weak var delegate: HomeRecommendContainerCellDelegate?
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -51,6 +54,11 @@ class HomeRecommendContainerCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setData(_ data: [Home.Recommend]) {
+        self.recommends = data
+        self.tableView.reloadData()
+    }
+    
 }
 
 extension HomeRecommendContainerCell: UITableViewDataSource, UITableViewDelegate {
@@ -60,7 +68,16 @@ extension HomeRecommendContainerCell: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: HomeRecommendItemCell.identifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: HomeRecommendItemCell.identifier, for: indexPath
+        )
+        
+        if let cell = cell as? HomeRecommendItemCell,
+           let data = self.recommends?[indexPath.row] {
+            cell.setData(data, rank: indexPath.row + 1)
+        }
+        print()
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

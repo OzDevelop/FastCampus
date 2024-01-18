@@ -13,12 +13,16 @@ protocol HomeRecentWatchContainerCellDelegate: AnyObject {
 }
 
 class HomeRecentWatchContainerCell: UITableViewCell {
-
+    
     static let identifier: String = "HomeRecentWatchContainerCell"
     static let height: CGFloat = 209
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    private var recents: [Home.Recent]?
+    
     weak var delegate: HomeRecentWatchContainerCellDelegate?
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -33,18 +37,23 @@ class HomeRecentWatchContainerCell: UITableViewCell {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
+    }
+    
+    func setData(_ data: [Home.Recent]) {
+        self.recents = data
+        self.collectionView.reloadData()
     }
     
 }
 
 extension HomeRecentWatchContainerCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        self.recents?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -52,6 +61,11 @@ extension HomeRecentWatchContainerCell: UICollectionViewDelegate, UICollectionVi
             withReuseIdentifier: HomeRecentWatchItemCell.identifier,
             for: indexPath
         )
+        
+        if let cell = cell as? HomeRecentWatchItemCell,
+           let data = self.recents?[indexPath.item] {
+            cell.setData(data)
+        }
         
         return cell
     }
