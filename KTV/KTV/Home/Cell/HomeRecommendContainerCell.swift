@@ -12,15 +12,17 @@ protocol HomeRecommendContainerCellDelegate: AnyObject {
     func homeRecommendContainerCellFoldChanged(_ cell: HomeRecommendContainerCell)
 }
 
-class HomeRecommendContainerCell: UITableViewCell {
+class HomeRecommendContainerCell: UICollectionViewCell {
 
     static let identifier: String = "HomeRecommendContainerCell"
     
     static func height(viewModel: HomeRecommendViewModel) -> CGFloat {
         let top: CGFloat = 84 - 6 // 첫번째 cell에서 bottom까지의 거리 - cell의 상단 여백
         let bottom: CGFloat = 68 - 6 // 마지막 cell첫번째 bottom까지의 거리 - cell의 하단 여백
-        let footerInset: CGFloat = 51 // container -> footer 까지의 여백
-        return HomeRecommendItemCell.height * CGFloat(viewModel.itemCount) + top + bottom + footerInset
+        
+//        let footerInset: CGFloat = 51 // container -> footer 까지의 여백
+//        return HomeRecommendItemCell.height * CGFloat(viewModel.itemCount) + top + bottom + footerInset
+        return HomeRecommendItemCell.height * CGFloat(viewModel.itemCount) + top + bottom
     }
     
     private var viewModel: HomeRecommendViewModel?
@@ -51,11 +53,11 @@ class HomeRecommendContainerCell: UITableViewCell {
         self.delegate?.homeRecommendContainerCellFoldChanged(self)
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//        // Configure the view for the selected state
+//    }
     
     func setViewModel(_ viewModel: HomeRecommendViewModel) {
         self.viewModel = viewModel

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeFooterCell: UITableViewCell {
+class HomeFooterView: UICollectionReusableView {
     
     static let height: CGFloat = 80
     static let identifier: String = "HomeFooterCell"
@@ -17,10 +17,10 @@ class HomeFooterCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//        // Configure the view for the selected state
+//    }
     
 }

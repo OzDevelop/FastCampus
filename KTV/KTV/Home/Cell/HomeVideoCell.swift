@@ -7,9 +7,9 @@
 
 import UIKit
 
-class HomeVideoCell: UITableViewCell {
+class HomeVideoCell: UICollectionViewCell {
     
-    static let height: CGFloat = 320
+    static let height: CGFloat = 300
     static let identifier: String = "HomeVideoCell"
 
     @IBOutlet weak var containerView: UIView!
@@ -31,6 +31,8 @@ class HomeVideoCell: UITableViewCell {
         self.containerView.layer.cornerRadius = 10
         self.containerView.layer.borderWidth = 1
         self.containerView.layer.borderColor = UIColor(named: "stroke-light")?.cgColor
+        
+        self.channelImageView.layer.cornerRadius = 10
     }
     
     override func prepareForReuse() {
@@ -50,11 +52,12 @@ class HomeVideoCell: UITableViewCell {
     }
 
     // 찾아보기
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    // 원래는 tableViewCell이었지만 collectionViewCell로 바꾸면서 필요없어짐
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//        // Configure the view for the selected state
+//    }
     
     func setData(_ data: Home.Video) {
         self.titleLabel.text = data.title
