@@ -160,7 +160,7 @@
                 <outlet property="thumbnailImageView" destination="nRS-JH-9JS" id="6gl-vf-w5k"/>
                 <outlet property="titleLabel" destination="7dL-7L-hNb" id="TVw-pJ-ZFv"/>
             </connections>
-            <point key="canvasLocation" x="892" y="133"/>
+            <point key="canvasLocation" x="891.60305343511448" y="132.3943661971831"/>
         </collectionViewCell>
     </objects>
     <resources>

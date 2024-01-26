@@ -83,6 +83,7 @@ class HomeViewController: UIViewController {
             UINib(nibName: "HomeVideoCell", bundle: .main),
             forCellWithReuseIdentifier: HomeVideoCell.identifier
         )
+        
         self.collectionView.register(
             UINib(nibName: "HomeRecommendContainerCell", bundle: .main),
             forCellWithReuseIdentifier: HomeRecommendContainerCell.identifier
@@ -297,6 +298,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         case .header, .footer:
             return .zero
         case .video:
+            print(width)
             return .init(width: width, height: HomeVideoCell.height)
         case .ranking:
             return .init(width: width, height: HomeRankingContainerCell.height)

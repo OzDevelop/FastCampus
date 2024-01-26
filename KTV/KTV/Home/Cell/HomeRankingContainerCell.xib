@@ -11,18 +11,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="sCn-LH-lbH">
-            <rect key="frame" x="0.0" y="0.0" width="384" height="328"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="sCn-LH-lbH" customClass="HomeRankingContainerCell" customModule="KTV" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="384" height="265"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="g8f-ws-Gre">
-                <rect key="frame" x="0.0" y="0.0" width="384" height="328"/>
+                <rect key="frame" x="0.0" y="0.0" width="384" height="265"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGe-ew-yyv">
-                        <rect key="frame" x="0.0" y="0.0" width="384" height="328"/>
+                        <rect key="frame" x="0.0" y="0.0" width="384" height="265"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="U7S-Dt-oep">
-                                <rect key="frame" x="0.0" y="0.0" width="384" height="328"/>
+                                <rect key="frame" x="0.0" y="0.0" width="384" height="265"/>
                                 <color key="backgroundColor" name="bg"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="20" id="1qi-Vj-QTi">
                                     <size key="itemSize" width="130" height="230"/>
@@ -49,6 +49,9 @@
                     <constraint firstAttribute="trailing" secondItem="EGe-ew-yyv" secondAttribute="trailing" id="jm7-bt-rIL"/>
                 </constraints>
             </collectionViewCellContentView>
+            <connections>
+                <outlet property="collectionView" destination="U7S-Dt-oep" id="4bd-ni-oMU"/>
+            </connections>
             <point key="canvasLocation" x="759" y="29"/>
         </collectionViewCell>
     </objects>

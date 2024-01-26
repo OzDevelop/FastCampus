@@ -73,6 +73,7 @@ class HomeRecommendContainerCell: UICollectionViewCell {
     private func setButtonImage(_ isFolded: Bool) {
         let imageName:String = isFolded ? "unfold" : "fold"
         self.foldButton.setImage(UIImage(named: imageName), for: .normal)
+        print("folded")
     
     }
     
@@ -83,7 +84,6 @@ class HomeRecommendContainerCell: UICollectionViewCell {
 extension HomeRecommendContainerCell: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("\(self.viewModel?.itemCount ?? 0)")
         return self.viewModel?.itemCount ?? 0
     }
     

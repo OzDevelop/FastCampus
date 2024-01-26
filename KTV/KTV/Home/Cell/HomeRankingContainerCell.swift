@@ -52,7 +52,7 @@ class HomeRankingContainerCell: UICollectionViewCell {
 
 extension HomeRankingContainerCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        rankings?.count ?? 0
+        self.rankings?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
